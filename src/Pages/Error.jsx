@@ -8,7 +8,7 @@ export default function Error() {
     <MainContainer>
       <StyledTitle>404</StyledTitle>
       <StyledSubTitle>Oh non, pas encore cette page...</StyledSubTitle>
-      <UnderSubTitle>Pour rentrer à la maison, c'est par<StyledLink to="/" style={{fontSize:'25px'}}>ici</StyledLink>.</UnderSubTitle>
+      <UnderSubTitle>Pour rentrer à la maison, c'est par<StyledLink to="/" style={{ fontSize: '25px' }}>ici</StyledLink>.</UnderSubTitle>
     </MainContainer>
   )
 }

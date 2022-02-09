@@ -13,8 +13,8 @@ const [data, setData] = useState([])
       .then(response => response.ok ? response.json() : console.error('code: ', response.status))
       .then(data => setData(data))
       .catch(error => console.log(error))
-  },[])
-console.log(data)
+  }, [])
+
   return (
     <div>
       <ComponentContainer>
@@ -22,7 +22,7 @@ console.log(data)
           ... .
         </Text>
         <GeneralSkillsContainer>
-          {data.map(({ index, id, name, html_url, languages_url, tags_url, homepage }) => (
+          {data.map(({ index, id, name, html_url, languages_url, tags_url, homepage, url }) => (
               (name.toLowerCase().includes("davidweiland") || name.toLowerCase().includes("fork")|| name.toLowerCase().includes("api")) ? null :
               <WorkCard
                 key={`${id}-${index}`}
@@ -31,6 +31,7 @@ console.log(data)
                 languages_url={languages_url}
                 tags_url={tags_url}
                 homepage={homepage}
+                url={url}
               />
             ))}
         </GeneralSkillsContainer>

@@ -23,7 +23,7 @@ export default class Card extends React.Component {
 
     return (
       <CardContainer>
-        <CardTitle>- {title}</CardTitle>
+        <CardTitle>{title}</CardTitle>
         {this._setImage(picture)}
       </CardContainer>
     )
