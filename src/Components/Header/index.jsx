@@ -3,22 +3,26 @@ import { StyledLink } from '../../Styles/StyledLink'
 import styled from "styled-components";
 import colors from "../../Styles/colors";
 import Logo from '../../Assets/Images/logo_Webeloppeur2.png'
+import { useLocation } from "react-router-dom";
 
 
-export default class Header extends React.Component {
-  render() {
-    return (
-      <HMainContainer>
-        <LogoContainer>
-          <Image src={Logo} alt="" />
-        </LogoContainer>
-        <NavContainer>
-          <StyledLink to='/' >Home page</StyledLink>
-          <StyledLink to='*' >Error page</StyledLink>
-        </NavContainer>
-      </HMainContainer>
-    )
-  }
+export default function Header() {
+  const { pathname } = useLocation()
+
+  return (
+    <HMainContainer>
+      <LogoContainer>
+        <Image src={Logo} alt="" />
+      </LogoContainer>
+      <NavContainer>
+        {(pathname === '/') ? (
+          <StyledLink to='/contact' >Contact Me</StyledLink>
+        ) : (
+          <StyledLink to='/' >Home Page</StyledLink>
+        )}
+      </NavContainer>
+    </HMainContainer>
+  )
 }
 
 const HMainContainer = styled.div`
