@@ -31,10 +31,10 @@ export default class Card extends React.Component {
 }
 
 const CardContainer = styled.div`
-  width: 100%;
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 `
 
 const CardTitle = styled.h1`

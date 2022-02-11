@@ -145,7 +145,7 @@ const SkillsContainer = styled.div`
   flex:1;
   flex-direction: column;
   justify-content: flex-start;
-  align-items:center
+  align-items:center;
 `
 
 const SkillsIcon = styled.i`
