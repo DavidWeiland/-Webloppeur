@@ -26,7 +26,11 @@ export default function ContactMe() {
             )
         form.current.reset()
     }
-
+console.log(
+    process.env.REACT_APP_SERVICE_ID,
+    process.env.REACT_APP_TEMPLATE_ID,
+    process.env.REACT_APP_USER_ID
+)
     return (
         <MainContainer style={{ minHeight: '60vh' }}>
             <StyledTitle>Contact me without delay</StyledTitle>
