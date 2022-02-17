@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { StyledLink } from '../../Styles/StyledLink'
 import styled from "styled-components";
 import colors from "../../Styles/colors";
@@ -10,18 +11,18 @@ export default function Header() {
   const { pathname } = useLocation()
 
   return (
-    <HMainContainer>
-      <LogoContainer>
-        <Image src={Logo} alt="" />
-      </LogoContainer>
-      <NavContainer>
-        {(pathname === '/') ? (
-          <StyledLink to='/contact' >Contact Me</StyledLink>
-        ) : (
-          <StyledLink to='/' >Home Page</StyledLink>
-        )}
-      </NavContainer>
-    </HMainContainer>
+      <HMainContainer>
+          <LogoContainer to="/">
+              <Image src={Logo} alt="" />
+          </LogoContainer>
+          <NavContainer>
+              {pathname === '/' ? (
+                  <StyledLink to="/contact">Contact Me</StyledLink>
+              ) : (
+                  <StyledLink to="/">Home Page</StyledLink>
+              )}
+          </NavContainer>
+      </HMainContainer>
   )
 }
 
@@ -34,7 +35,7 @@ const HMainContainer = styled.div`
   justify-content: space-between;
   align-items:center
 `
-const LogoContainer = styled.div`
+const LogoContainer = styled(Link)`
   display: flex;
   flex:1;
   height: 200%;
