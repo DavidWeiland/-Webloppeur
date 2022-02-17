@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import colors from '../Styles/colors'
 import Profile from '../Assets/Images/Avatar.png'
 import Presentation from '../Components/Presentation'
-import MyWork from '../Components/MyWork'
+//import MyWork from '../Components/MyWork'
 
 export default function Home() {
   return (
