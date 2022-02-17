@@ -5,48 +5,57 @@ import { MainContainer } from '../Styles/MainContainer'
 import colors from '../Styles/colors'
 
 export default function ContactMe() {
-  const form = useRef()
-  
-  const sendEmail = (e) => {
-    e.preventDefault()
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_USER_ID)
-      .then((result) => {
-        console.log(result.text)
-      }, (error) => {
-        console.log(error.text)
-      })
-    form.current.reset()
-  }
+    const form = useRef()
 
-  return (
-      <MainContainer style={{ minHeight: '60vh' }}>
-          <StyledTitle>Contact me without delay</StyledTitle>
-          <StyledForm ref={form} onSubmit={sendEmail}>
-              <StyledLabel>Name</StyledLabel>
-              <StyledInput
-                  type="text"
-                  name="user_name"
-                  placeholder="Marina"
-                  required
-              />
-              <StyledLabel>Email</StyledLabel>
-              <StyledInput
-                  type="email"
-                  name="user_email"
-                  placeholder="example@example.com"
-                  required
-              />
-              <StyledLabel>Message</StyledLabel>
-              <StyledTextarea
-                  name="message"
-                  placeholder="I love what you do !"
-                  rows="5"
-                  required
-              />
-              <StyledSendButton type="submit" value="Send" />
-          </StyledForm>
-      </MainContainer>
-  )
+    const sendEmail = (e) => {
+        e.preventDefault()
+        emailjs
+            .sendForm(
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
+                form.current,
+                process.env.REACT_APP_USER_ID
+            )
+            .then(
+                (result) => {
+                    console.log(result.text)
+                },
+                (error) => {
+                    console.log(error.text)
+                }
+            )
+        form.current.reset()
+    }
+
+    return (
+        <MainContainer style={{ minHeight: '60vh' }}>
+            <StyledTitle>Contact me without delay</StyledTitle>
+            <StyledForm ref={form} onSubmit={sendEmail}>
+                <StyledLabel>Name</StyledLabel>
+                <StyledInput
+                    type="text"
+                    name="user_name"
+                    placeholder="Marina"
+                    required
+                />
+                <StyledLabel>Email</StyledLabel>
+                <StyledInput
+                    type="email"
+                    name="user_email"
+                    placeholder="example@example.com"
+                    required
+                />
+                <StyledLabel>Message</StyledLabel>
+                <StyledTextarea
+                    name="message"
+                    placeholder="I love what you do !"
+                    rows="5"
+                    required
+                />
+                <StyledSendButton type="submit" value="Send" />
+            </StyledForm>
+        </MainContainer>
+    )
 }
 
 const StyledTitle = styled.h1`
@@ -81,7 +90,7 @@ const StyledInput = styled.input`
     border-radius: 15px;
     border: 1px solid grey;
     box-shadow: inset 2px 2px 10px #c5c5c5;
-    padding:10px;
+    padding: 10px;
 `
 
 const StyledTextarea = styled.textarea`
@@ -104,9 +113,9 @@ const StyledSendButton = styled.input`
     border-radius: 15px;
     border: 1px solid grey;
     box-shadow: 5px 5px 15px grey, inset -3px -3px 10px grey,
-        inset 3px 3px 10px ${colors.primary20};
+        inset 3px 3px 10px ${colors.secondary};
     &:active {
         box-shadow: 5px 5px 10px grey, inset -3px -3px 10px grey,
-            inset 3px 3px 10px ${colors.primary20};
+            inset 3px 3px 10px ${colors.secondary};
     }
 `
