@@ -14,7 +14,7 @@ export default function Home() {
           </StyledText>
           <ImageContainer />
           <Presentation />
-          <MyWork />
+          {/* <MyWork /> */}
       </MainContainer>
   )
 }
