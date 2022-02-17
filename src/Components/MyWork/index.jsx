@@ -44,7 +44,8 @@ const [data, setData] = useState([])
                           name.toLowerCase().includes('davidweiland') ||
                           fork ||
                           name.toLowerCase().includes('api') ||
-                          !homepage ? null : (
+                          !homepage ||
+                          homepage.includes('webloppeur') ? null : (
                               <WorkCard
                                   key={`${id}-${index}`}
                                   title={name}
