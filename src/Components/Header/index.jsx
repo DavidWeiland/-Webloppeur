@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { StyledLink } from '../../Styles/StyledLink'
 import styled from "styled-components";
 import colors from "../../Styles/colors";
-import Logo from '../../Assets/Images/logo_Webeloppeur2.png'
+import Logo from '../../Assets/Images/logo_Webloppeur.png'
 import { useLocation } from "react-router-dom";
 
 
